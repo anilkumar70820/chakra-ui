@@ -16,14 +16,25 @@ import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 const Hero = () => {
   const [show, setShow] = useState(false);
 
+  // if (show) {
+  //   document.body.style.overflow = "hidden";
+  // } else {
+  //   document.body.style.overflow = "visible";
+  // }
+
   return (
     <>
       <Container maxW={"1140px"} mx={"auto"}>
         <Flex as={"header"} py={"20px"} align={"center"}>
-          <Link as={"h2"} my={0} fontFamily={'fontRubik'}  fontSize={"30px"}
-                fontWeight={600}
-                textDecoration={"none"}
-                textColor={"black"}>
+          <Link
+            as={"h2"}
+            my={0}
+            fontFamily={"fontRubik"}
+            fontSize={"30px"}
+            fontWeight={600}
+            textDecoration={"none"}
+            textColor={"black"}
+          >
             Logo
           </Link>
           <Spacer />
@@ -48,7 +59,9 @@ const Hero = () => {
             <ListItem>
               {" "}
               <Link
-                href="#" onClick={() => setShow(!show)}
+              
+                href="#grid"
+                onClick={() => setShow(!show)}
                 fontSize={"20px"}
                 fontFamily={"fontRoboto"}
                 fontWeight={700}
@@ -56,13 +69,14 @@ const Hero = () => {
                 textColor={"black"}
               >
                 {" "}
-                About{" "}
+                Grid{" "}
               </Link>{" "}
             </ListItem>
             <ListItem>
               {" "}
               <Link
-                href="#" onClick={() => setShow(!show)}
+                href="#accordian"
+                onClick={() => setShow(!show)}
                 fontSize={"20px"}
                 fontFamily={"fontPoppins"}
                 fontWeight={"700"}
@@ -70,13 +84,14 @@ const Hero = () => {
                 textColor={"black"}
               >
                 {" "}
-                Contact us{" "}
+                Accordian{" "}
               </Link>{" "}
             </ListItem>
             <ListItem>
               {" "}
               <Link
-                href="#" onClick={() => setShow(!show)}
+                href="#tabs"
+                onClick={() => setShow(!show)}
                 fontSize={"20px"}
                 fontFamily={"fontInter"}
                 fontWeight={600}
@@ -84,7 +99,7 @@ const Hero = () => {
                 textColor={"black"}
               >
                 {" "}
-                Company{" "}
+                Tabs{" "}
               </Link>{" "}
             </ListItem>
             <ListItem display={["unset", "none"]}>
@@ -104,16 +119,15 @@ const Hero = () => {
                 borderColor={"transparent"}
                 border={"1px solid"}
                 cursor={"pointer"}
-                
               >
-                Sign up
+                Modals
               </Button>
             </ListItem>
           </UnorderedList>
           <Text as={"span"} display={["none", "unset"]}>
             <Button
-            fontFamily={'fontRoboto'}
-            lineHeight={'100%'}
+              fontFamily={"fontRoboto"}
+              lineHeight={"100%"}
               ms={["0", "0", "24px"]}
               bg={"black"}
               px={"24px"}
@@ -128,12 +142,23 @@ const Hero = () => {
               border={"1px solid"}
               cursor={"pointer"}
             >
-              Sign up
+              Modals
             </Button>
           </Text>
-          <Text as={"span"} transition={"all 500ms linear"} zIndex={11} onClick={() => setShow(!show)} display={["unset","unset","none"]} ms={['0','24px']}>
+          <Text
+            as={"span"}
+            transition={"all 500ms linear"}
+            zIndex={11}
+            onClick={() => setShow(!show)}
+            display={["unset", "unset", "none"]}
+            ms={["0", "24px"]}
+          >
             {" "}
-            {show ? <RxCross2 fontSize={'30px'}/> : <RxHamburgerMenu fontSize={'30px'}/>}
+            {show ? (
+              <RxCross2 fontSize={"30px"} />
+            ) : (
+              <RxHamburgerMenu fontSize={"30px"} />
+            )}
           </Text>
         </Flex>
       </Container>
